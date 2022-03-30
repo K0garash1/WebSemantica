@@ -1,6 +1,4 @@
-from crypt import methods
 import sys
-from urllib.request import Request;
 from flask import Flask, redirect, render_template, request, request_finished, url_for, session;
 sys.path.append('Controllers/UserController')
 from user_controller import user_login, user_logout
