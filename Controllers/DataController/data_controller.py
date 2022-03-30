@@ -1,4 +1,3 @@
-import requests
 def send_query(form):
     title = form['title']
     author = form['author']
