@@ -18,7 +18,8 @@ def send_query(form):
     typeResource = form['type']
     language = form['language']
     keywords = form['keywords']
-    
+    #Genera consulta sparql
     query = gen_query(title, author, year, publisher, typeResource, language, keywords)
+    #Obtiene una respuesta del servidor
     response = query_data(query)
     return response.json()
