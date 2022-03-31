@@ -1,0 +1,11 @@
+{%extends 'UserView/layout.html'%}
+<!--Formulario de consulta-->
+{% block content%}
+<section class="content">
+  <ul>
+    <li><a href="127.0.0.1:8080">Servidor Tomcat</a></li>
+    <li><a href="ip_Dspace"></a>DScpace</li>
+    <li><a href="{{ url_for('logout') }}">Cerrar sesion</a></li>
+  <ul>
+</section>
+{% endblock %}
