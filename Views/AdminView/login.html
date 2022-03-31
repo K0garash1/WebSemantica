@@ -1,40 +1,21 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <title>Consulta</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/main.css') }}">
-</head>
-<body>
-    <!--Barra de navegacion-->
-    <section class="navbar">
-        <ul>
-            <li><a href="{{ url_for('home') }}">Consulta REA</a></li>
-            <li><a href="{{ url_for('help')  }}">Ayuda en linea</a></li>
-            <li><a href="{{ url_for('admin') }}">Ingreso Administracion</a></li>
-        </ul>
-    </section>
-    <!--Login-->
-    <section class="content">
-        <form method="post">
-            <!--Email-->
-            <label for="GET-email">Correo electronico</label>
-            <br>
-            <input id="GET-email" type="text" name="email">
-            <br>
-            <!--Password-->
-            <label for="GET-password">Contraseña</label>
-            <br>
-            <input id="GET-password" type="password" name="password">
-            <br>
-            <!--Enviar peticion-->
-            <input type="submit" value="Ingresar">
-        </form>
-    </section>
-</body>
-</html>
+{%extends 'UserView/layout.html'%} {% block content%}
+<!--Login-->
+<section class="content">
+  <form method="post">
+    <!--Email-->
+    <label for="GET-email">Correo electronico</label>
+    <br />
+    <input id="GET-email" type="text" name="email" />
+    <br />
+    <!--Password-->
+    <label for="GET-password">Contraseña</label>
+    <br />
+    <input id="GET-password" type="password" name="password" />
+    <br />
+    <!--Enviar peticion-->
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <a type="submit" class="btn btn-success me-1 text-center">ingresar</a>
+    </div>
+  </form>
+</section>
+{% endblock %}
