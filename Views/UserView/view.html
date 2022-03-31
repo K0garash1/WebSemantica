@@ -1,58 +1,40 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <title>Consulta</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/main.css') }}">
-</head>
-<body>
-    <!--Barra de navegacion-->
-    <section class="navbar">
-        <ul>
-            <li><a href="{{ url_for('home') }}">Consulta REA</a></li>
-            <li><a href="{{ url_for('help')  }}">Ayuda en linea</a></li>
-            <li><a href="{{ url_for('admin') }}">Ingreso Administracion</a></li>
-        </ul>
-    </section>
-    <!--Formulario de consulta-->
-    <section id="search_form" class="content">
-        <form method="post">
-            <!--Titulo-->
-            <label for="GET-title">Titulo</label>
-            <input id="GET-title" type="text" name="title">
-            <br>
-            <!--Autor-->
-            <label for="GET-author">Autor</label>
-            <input id="GET-author" type="text" name="author">
-            <br>
-            <!--Año-->
-            <label for="GET-year">Año</label>
-            <input id="GET-year" type="text" name="year">
-            <br>
-            <!--publisher-->
-            <label for="GET-publisher">Publisher</label>
-            <input id="GET-publisher" type="text" name="publisher">
-            <br>
-            <!--Tipo-->
-            <label for="GET-type">Tipo</label>
-            <input id="GET-type" type="text" name="type">
-            <br>
-            <!--Idioma-->
-            <label for="GET-language">Idioma</label>
-            <input id="GET-language" type="text" name="language">
-            <br>
-            <!--Keywords-->
-            <label for="GET-keywords">Palabras clave</label>
-            <input id="GET-keywords" type="text" name="keywords">
-            <br>
-            <!--Enviar peticion-->
-            <input type="submit" value="Buscar">
-        </form>
-    </section>
-</body>
-</html>
+{%extends 'UserView/layout.html'%}
+<!--Formulario de consulta-->
+{% block content%}
+<section id="search_form" class="content">
+  <form method="post">
+    <!--Titulo-->
+    <label for="GET-title">Titulo</label>
+    <input id="GET-title" type="text" name="title" />
+    <br />
+    <!--Autor-->
+    <label for="GET-author">Autor</label>
+    <input id="GET-author" type="text" name="author" />
+    <br />
+    <!--Año-->
+    <label for="GET-year">Año</label>
+    <input id="GET-year" type="text" name="year" />
+    <br />
+    <!--publisher-->
+    <label for="GET-publisher">Publisher</label>
+    <input id="GET-publisher" type="text" name="publisher" />
+    <br />
+    <!--Tipo-->
+    <label for="GET-type">Tipo</label>
+    <input id="GET-type" type="text" name="type" />
+    <br />
+    <!--Idioma-->
+    <label for="GET-language">Idioma</label>
+    <input id="GET-language" type="text" name="language" />
+    <br />
+    <!--Keywords-->
+    <label for="GET-keywords">Palabras clave</label>
+    <input id="GET-keywords" type="text" name="keywords" />
+    <br />
+    <!--Enviar peticion-->
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <a type="submit" class="btn btn-success me-1 text-center">Buscar</a>
+    </div>
+  </form>
+</section>
+{% endblock %}
